@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        #calculator{
+            width: 300px;
+            margin: auto;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: aquamarine;
+        }
+        h1{
+            text-align: center;
+            /* padding: 0px; */
+            margin: 0;
+        }
+        input[type='text']{
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            padding: 5px;
+            height: 60px;
+            border-color: rgb(252, 250, 247);
+        }
+        input[type='button']{
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <h1>Calculator</h1>
+        <input type="text" id="expression" readonly disabled>
+        <br>
+        <input type="button" value="1" onclick="appendToExpression('1');">
+        <input type="button" value="2" onclick="appendToExpression('2');">
+        <input type="button" value="3" onclick="appendToExpression('3');">
+        <input type="button" value="+" onclick="appendToExpression('+');">
+        <br>
+        <input type="button" value="4" onclick="appendToExpression('4');">
+        <input type="button" value="5" onclick="appendToExpression('5');">
+        <input type="button" value="6" onclick="appendToExpression('6');">
+        <input type="button" value="-" onclick="appendToExpression('-');">
+        <br>
+        <input type="button" value="7" onclick="appendToExpression('7');">
+        <input type="button" value="8" onclick="appendToExpression('8');">
+        <input type="button" value="9" onclick="appendToExpression('9');">
+        <input type="button" value="*" onclick="appendToExpression('*');">
+        <br>
+        <input type="button" value="0" onclick="appendToExpression('0');">
+        <input type="button" value="." onclick="appendToExpression('.');">
+        <input type="button" value="/" onclick="appendToExpression('/');">
+        <input type="button" value="C" onclick="clearExpression();">
+        <br>
+        <input type="button" value="=" onclick="checkResult();">
+    </div>
+
+    <script>
+        function appendToExpression(value){
+            document.getElementById('expression').value += value
+        }
+
+        function clearExpression(){
+            document.getElementById('expression').value = '';
+        }
+
+        function checkResult(){
+            try{
+                const result = eval(document.getElementById('expression').value);
+                document.getElementById('expression').value = result;
+            }catch(eroor){
+                document.getElementById('expression').value = 'Invalid Expression';
+            }
+        }
+    </script>
+</body>
+</html>

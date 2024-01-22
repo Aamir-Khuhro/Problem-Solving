@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    /* height: inherit; */
+}
+
+.new-div {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    /* margin: 0; */
+    /* padding: 0; */
+    /* border: 1px solid darkgreen; */
+}

@@ -1,0 +1,10 @@
+.btn{
+    width: 35px;
+    text-align: center;
+    margin: 1.8px 2.5px;
+    padding: 1.5px;
+}
+.btn:hover{
+    background-color:rgb(164, 194, 198);
+    border: 0.1px;
+}

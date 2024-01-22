@@ -1,0 +1,68 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form action="">
+        <label for="calc">Calcculation: </label>
+        <input type="text">
+        <br>
+        <label for="result" id="result">Result: </label>
+        <input type="text">
+        <br>
+        <input type="submit">
+        <input type="submit">
+        <input id="answer" type="button" value="Click for answer" class="btn" onclick="answer();"/>
+        <input id="clear" type="reset" value="Clear" class="btn" />
+    </form>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression Evaluator</title>
+</head>
+<body>
+
+<h2>Expression Evaluator</h2>
+
+<form action="#">
+    <label for="expressionInput">Calcculation: </label>
+    <input type="text" id="expressionInput"><br>
+
+    <label for="resultInput">Result: </label>
+    <input type="text" id="resultInput"><br>
+
+    <button onclick="evaluateExpression()">Click to Check Answer</button>
+    <input type="reset">
+</form>
+
+<script>
+    function evaluateExpression() {
+        // Get the expression from the input field
+        var expression = document.getElementById("expressionInput").value;
+
+        try {
+            // Evaluate the expression using the eval() function
+            var result = eval(expression);
+
+            // Display the result in the result input field
+            document.getElementById("resultInput").value = result;
+        } catch (error) {
+            // Display an error message if the expression is invalid
+            document.getElementById("resultInput").value = "Invalid Expression";
+        }
+    }
+</script>
+
+</body>
+</html>
